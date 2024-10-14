@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Λεπτομέρειες Αυτοκινήτου</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <h1><a href="home.html">AutoSales</a></h1>
+        
+        <div class="hamburger">&#9776;</div> <!-- Hamburger icon -->
+    
+        <nav>
+            <ul id="navbar">
+                <li><a href="home.html">Αρχική</a></li>
+                <li><a href="cars.html">Αυτοκίνητα</a></li>
+                <li><a href="aboutus.html">Σχετικά με εμάς</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="product-container">
+        <div class="container">
+            <div class="product-image">
+                <img src="" alt="Μεγάλη εικόνα" id="mainImage" class="main-image">
+            </div>
+            <div class="product-details">
+                <h2 id="carName"></h2>
+                <table class="details-table">
+                    <tr>
+                        <th>Λεπτομέρεια</th>
+                        <th>Πληροφορία</th>
+                    </tr>
+                    <tr>
+                        <td>Έτος</td>
+                        <td id="carYear"></td>
+                    </tr>
+                    <tr>
+                        <td>Χιλιόμετρα</td>
+                        <td id="carKm"></td>
+                    </tr>
+                    <tr>
+                        <td>Κινητήρας</td>
+                        <td id="carEngine"></td>
+                    </tr>
+                    <tr>
+                        <td>Τιμή</td>
+                        <td id="carPrice"></td>
+                    </tr>
+                    <tr>
+                        <td>Κατανάλωση Καυσίμου</td>
+                        <td id="carFuelConsumption"></td> <!-- Νέο πεδίο -->
+                    </tr>
+                    <tr>
+                        <td>Ιπποδύναμη</td>
+                        <td id="carHorsePower"></td> <!-- Νέο πεδίο -->
+                    </tr>
+                    <tr>
+                        <td>Επιτάχυνση 0-100km/h</td>
+                        <td id="carAcceleration"></td> <!-- Νέο πεδίο -->
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="carousel" id="imageCarousel">
+            <!-- Εδώ θα προστεθούν οι μικρές εικόνες του καρουσέλ δυναμικά -->
+        </div>
+    </section>
+        
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('header');
+            const navbar = document.getElementById('navbar');
+            const hamburger = document.querySelector('.hamburger');
+            const isHomePage = window.location.pathname.includes('home.html'); // Ελέγχει αν είναι η αρχική σελίδα
+        
+            // Αρχική κατάσταση: Διαφάνεια για το header αν είμαστε στην αρχική σελίδα
+            if (isHomePage) {
+                header.classList.add('transparent'); // Εφαρμόζει τη διαφάνεια στην αρχική σελίδα
+            } else {
+                header.classList.remove('transparent'); // Αφαιρεί τη διαφάνεια σε άλλες σελίδες
+            }
+        
+            // Προσθήκη event listener στο hamburger menu
+            hamburger.addEventListener('click', () => {
+                navbar.classList.toggle('active'); // Εναλλαγή της ενεργής κλάσης
+        
+                if (isHomePage && navbar.classList.contains('active')) {
+                    navbar.classList.add('transparent'); // Προσθήκη διαφάνειας αν είμαστε στην αρχική σελίδα
+                } else {
+                    navbar.classList.remove('transparent'); // Αφαίρεση διαφάνειας σε άλλες σελίδες ή όταν το menu κλείνει
+                }
+            });
+        });
+        
+            </script>
+    
+    
+  
+<footer>
+    <div class="footer-container">
+        <!-- Στήλη 1 -->
+        <div class="footer-column">
+            <h3>Σχετικά με Εμάς</h3>
+            <p>Ειδικευόμαστε στην εισαγωγή αυτοκινήτων από το εξωτερικό, παρέχοντας υψηλής ποιότητας οχήματα και κορυφαία εξυπηρέτηση στους πελάτες μας.</p>
+        </div>
+
+        <!-- Στήλη 2 -->
+        <div class="footer-column">
+            <h3>Γρήγοροι Σύνδεσμοι</h3>
+            <ul>
+                <li><a href="home.html">Αρχική Σελίδα</a></li>
+                <li><a href="aboutus.html">Σχετικά με Εμάς</a></li>
+                <li><a href="cars.html">Αυτοκίνητα</a></li>
+                <li><a href="#">Επικοινωνία</a></li>
+                <li><a href="#">Όροι Χρήσης</a></li>
+            </ul>
+        </div>
+
+        <!-- Στήλη 3 -->
+        <div class="footer-column">
+            <h3>Επικοινωνία</h3>
+            <ul>
+                <li>Email: info@autoinport.gr</li>
+                <li>Τηλέφωνο: +30 210 1234567</li>
+                <li>Διεύθυνση: Λεωφόρος Αυτοκινήτων 123, Αθήνα</li>
+            </ul>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+
+      
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2024 AutoImport. Όλα τα δικαιώματα κατοχυρωμένα.</p>
+    </div>
+</footer>
+    <script src="script.js"></script>
+    
+    </body>
+    </html>

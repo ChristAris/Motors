@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Φίλτρα Αυτοκινήτων</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <h1><a href="home.html">AutoSales</a></h1>
+        
+        <div class="hamburger">&#9776;</div> <!-- Hamburger icon -->
+    
+        <nav>
+            <ul id="navbar">
+                <li><a href="home.html">Αρχική</a></li>
+                <li><a href="cars.html">Αυτοκίνητα</a></li>
+                <li><a href="aboutus.html">Σχετικά με εμάς</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('header');
+            const navbar = document.getElementById('navbar');
+            const hamburger = document.querySelector('.hamburger');
+            const isHomePage = window.location.pathname.includes('home.html'); // Ελέγχει αν είναι η αρχική σελίδα
+        
+            // Αρχική κατάσταση: Διαφάνεια για το header αν είμαστε στην αρχική σελίδα
+            if (isHomePage) {
+                header.classList.add('transparent'); // Εφαρμόζει τη διαφάνεια στην αρχική σελίδα
+            } else {
+                header.classList.remove('transparent'); // Αφαιρεί τη διαφάνεια σε άλλες σελίδες
+            }
+        
+            // Προσθήκη event listener στο hamburger menu
+            hamburger.addEventListener('click', () => {
+                navbar.classList.toggle('active'); // Εναλλαγή της ενεργής κλάσης
+        
+                if (isHomePage && navbar.classList.contains('active')) {
+                    navbar.classList.add('transparent'); // Προσθήκη διαφάνειας αν είμαστε στην αρχική σελίδα
+                } else {
+                    navbar.classList.remove('transparent'); // Αφαίρεση διαφάνειας σε άλλες σελίδες ή όταν το menu κλείνει
+                }
+            });
+        });
+        
+            </script>
+            
+<!-- Φίλτρα και Αναζήτηση -->
+<div class="filters">
+    <select id="brandFilter">
+        <option value="">Μάρκα</option>
+        <option value="Ford">Ford</option>
+        <option value="Audi">Audi</option>
+        <option value="BMW">BMW</option>
+        <option value="Tesla">Tesla</option>
+    </select>
+
+    <select id="yearFilter">
+        <option value="">Χρονολογία</option>
+        <option value="2024">2024</option>
+        <option value="2023">2023</option>
+        <option value="2022">2022</option>
+        <option value="2021">2021</option>
+        <option value="2020">2020</option>
+        <option value="2019">2019</option>
+        <option value="2018">2018</option>
+    </select>
+
+    <!-- Νέο φίλτρο για τα χιλιόμετρα -->
+    <select id="kmFilter">
+        <option value="">Χιλιόμετρα</option>
+        <option value="5000">Έως 5,000 χλμ</option>
+        <option value="10000">Έως 10,000 χλμ</option>
+        <option value="50000">Έως 50,000 χλμ</option>
+        <option value="100000">Έως 100,000 χλμ</option>
+    </select>
+
+    <!-- Νέο φίλτρο για τον κινητήρα (κυβικά) -->
+    <select id="engineFilter">
+        <option value="">Κυβικά</option>
+        <option value="1000">Έως 1,000 κυβικά</option>
+        <option value="1600">Έως 1,600 κυβικά</option>
+        <option value="2000">Έως 2,000 κυβικά</option>
+        <option value="3000">Έως 3,000 κυβικά</option>
+    </select>
+    <input type="text" id="searchInput" placeholder="Αναζήτηση με όνομα...">
+</div>
+
+
+<!-- Λίστα Αυτοκινήτων (θα γεμίσει δυναμικά από το JavaScript) -->
+<section class="car-list" id="carList">
+    <!-- Τα αυτοκίνητα θα φορτωθούν εδώ δυναμικά -->
+
+<!-- Λίστα Αυτοκινήτων (θα γεμίσει δυναμικά από το JavaScript) -->
+<section class="car-list empty" id="carList">
+    <!-- Τα αυτοκίνητα θα φορτωθούν εδώ δυναμικά -->
+</section>
+</section>
+
+
+
+<footer>
+    <div class="footer-container">
+        <!-- Στήλη 1 -->
+        <div class="footer-column">
+            <h3>Σχετικά με Εμάς</h3>
+            <p>Ειδικευόμαστε στην εισαγωγή αυτοκινήτων από το εξωτερικό, παρέχοντας υψηλής ποιότητας οχήματα και κορυφαία εξυπηρέτηση στους πελάτες μας.</p>
+        </div>
+
+        <!-- Στήλη 2 -->
+        <div class="footer-column">
+            <h3>Γρήγοροι Σύνδεσμοι</h3>
+            <ul>
+                <li><a href="home.html">Αρχική Σελίδα</a></li>
+                <li><a href="aboutus.html">Σχετικά με Εμάς</a></li>
+                <li><a href="cars.html">Αυτοκίνητα</a></li>
+                <li><a href="#">Επικοινωνία</a></li>
+                <li><a href="#">Όροι Χρήσης</a></li>
+            </ul>
+        </div>
+
+        <!-- Στήλη 3 -->
+        <div class="footer-column">
+            <h3>Επικοινωνία</h3>
+            <ul>
+                <li>Email: info@autoinport.gr</li>
+                <li>Τηλέφωνο: +30 210 1234567</li>
+                <li>Διεύθυνση: Λεωφόρος Αυτοκινήτων 123, Αθήνα</li>
+            </ul>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+
+      
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2024 AutoImport. Όλα τα δικαιώματα κατοχυρωμένα.</p>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+
+
+</body>
+</html>

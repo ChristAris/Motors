@@ -1,0 +1,122 @@
+[
+    {
+      "id": 1,
+      "name": "Smart",
+      "year": 2022,
+      "km": "5,000",
+      "engine": "1000",
+      "price": "15,000 €",
+      "fuelConsumption": "6.5 lt/100km",
+      "horsePower": "110 hp",
+      "acceleration": "10.5 sec",
+      "images": ["smart.jpg", "smart.jpg", "smart.jpg"]
+    },
+    {
+        "id": 2,
+        "name": "Toyota Yaris",
+        "year": 2022,
+        "km": "12,000",
+        "engine": "1500",
+        "price": "15,000 €",
+        "fuelConsumption": "6.5 lt/100km",
+        "horsePower": "110 hp",
+        "acceleration": "10.5 sec",
+        "images": ["yaris.webp", "yarisback.jpg", "yaris.webp"]
+      },
+      {
+        "id": 3,
+        "name": "Ferrari",
+        "year": 2024,
+        "km": "12,000",
+        "engine": "3000",
+        "price": "85,000 €",
+        "fuelConsumption": "6.5 lt/100km",
+        "horsePower": "110 hp",
+        "acceleration": "10.5 sec",
+        "images": ["fer.jpg", "fer.jpg", "fer.jpg"]
+      },
+      {
+        "id": 4,
+        "name": "Audi A4",
+        "year": 2020,
+        "km": "12,000",
+        "engine": "1500",
+        "price": "25,000 €",
+        "fuelConsumption": "6.5 lt/100km",
+        "horsePower": "110 hp",
+        "acceleration": "10.5 sec",
+        "images": ["a44.webp", "a44.webp", "a44.webp"]
+      },
+      {
+        "id": 5,
+        "name": "Amg Mercedes",
+        "year": 2022,
+        "km": "12,000",
+        "engine": "1500",
+        "price": "45,000 €",
+        "fuelConsumption": "6.5 lt/100km",
+        "horsePower": "110 hp",
+        "acceleration": "10.5 sec",
+        "images": ["amg.jpg", "amg.jpg","amg.jpg"]
+      },
+      {
+        "id": 7,
+        "name": "Tesla",
+        "year": 2024,
+        "km": "12,000",
+        "engine": "1500",
+        "price": "250,000 €",
+        "fuelConsumption": "6.5 lt/100km",
+        "horsePower": "110 hp",
+        "acceleration": "10.5 sec",
+        "images": ["tesla.jpg", "tesla.jpg", "tesla.jpg"]
+      },
+      {
+        "id": 8,
+        "name": "Audi A4",
+        "year": 2020,
+        "km": "12,000",
+        "engine": "1500",
+        "price": "25,000 €",
+        "fuelConsumption": "6.5 lt/100km",
+        "horsePower": "110 hp",
+        "acceleration": "10.5 sec",
+        "images": ["a44.webp", "a44.webp", "a44.webp"]
+      },
+      {
+        "id": 9,
+        "name": "Volkswagen Golf GTI",
+        "year": 2020,
+        "km": "12,000",
+        "engine": "1500",
+        "price": "25,000 €",
+        "fuelConsumption": "6.5 lt/100km",
+        "horsePower": "110 hp",
+        "acceleration": "10.5 sec",
+        "images": ["golf.jpg", "golf.jpg", "golf.jpg"]
+      },
+      {
+        "id": 10,
+        "name": "BMW",
+        "year": 2024,
+        "km": "12,000",
+        "engine": "1500",
+        "price": "25,000 €",
+        "fuelConsumption": "6.5 lt/100km",
+        "horsePower": "110 hp",
+        "acceleration": "10.5 sec",
+        "images": ["bmw.webp", "bmw.webp", "bmw.webp"]
+      },
+    {
+      "id": 6,
+      "name": "Ford Focus",
+      "year": 2021,
+      "km": "25,000",
+      "engine": "1000",
+      "price": "18,000 €",
+      "fuelConsumption": "7.0 lt/100km",
+      "horsePower": "125 hp",
+      "acceleration": "9.5 sec",
+      "images": ["focus.jfif", "focus.jfif", "focus.jfif"]
+    }
+  ]

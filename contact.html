@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Πώληση Αυτοκινήτων</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+
+    <header>
+        <h1><a href="home.html">AutoSales</a></h1>
+        
+        <div class="hamburger">&#9776;</div> <!-- Hamburger icon -->
+    
+        <nav>
+            <ul id="navbar">
+                <li><a href="home.html">Αρχική</a></li>
+                <li><a href="cars.html">Αυτοκίνητα</a></li>
+                <li><a href="aboutus.html">Σχετικά με εμάς</a></li>
+                <li><a href="contact.html">Επικοινωνία</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="section-container">
+        <img src="ma.jpg" alt="Εικόνα της AutoSales" class="hero-image">
+        
+        <div class="section-content">
+            <h2>Καλώς ήρθατε στην AutoSales!</h2>
+            <p>Ανακαλύψτε την καλύτερη εμπειρία στην αγορά αυτοκινήτων με εξαιρετικές προσφορές, αξιόπιστες υπηρεσίες και υποστήριξη πελατών που δεν θα βρείτε αλλού.</p>
+            <p>Είτε ψάχνετε για ένα νέο αυτοκίνητο είτε χρειάζεστε υποστήριξη στην εξυπηρέτηση, είμαστε εδώ για να σας βοηθήσουμε!</p>
+        
+            <h3>Επικοινωνήστε μαζί μας</h3>
+            <p>Έχετε ερωτήσεις ή χρειάζεστε περισσότερες πληροφορίες; Συμπληρώστε τη φόρμα επικοινωνίας παρακάτω και θα σας απαντήσουμε το συντομότερο δυνατόν.</p>
+        
+            <div class="form-container">
+                <h2>Φόρμα Επικοινωνίας</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Όνομα</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Μήνυμα</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit">Αποστολή</button>
+                </form>
+            </div>
+        </div>
+    
+        <!-- Χάρτης τοποθετημένος κάτω από τη φωτογραφία -->
+        <div class="map-container">
+            <h3>Που να μας βρείτε</h3>
+            <p>Επισκεφθείτε μας στη διεύθυνση παρακάτω για να δείτε από κοντά την ποικιλία των αυτοκινήτων μας:</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4482.02900104668!2d22.13974084633667!3d37.407019358412334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sel!2sgr!4v1728554909999!5m2!1sel!2sgr" 
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+    
+    <script>
+        // Διαχείριση υποβολής της φόρμας
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Αποφυγή προεπιλεγμένης υποβολής
+    
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+    
+            // Δημιουργία αντικειμένου για την υποβολή
+            const submission = {
+                name: name,
+                email: email,
+                message: message
+            };
+    
+            // Απόκτηση τρεχόντων υποβολών από το localStorage
+            let submissions = JSON.parse(localStorage.getItem('submissions')) || [];
+    
+            // Προσθήκη της νέας υποβολής στον πίνακα
+            submissions.push(submission);
+    
+            // Αποθήκευση του ενημερωμένου πίνακα στο localStorage
+            localStorage.setItem('submissions', JSON.stringify(submissions));
+    
+            alert('Τα δεδομένα αποθηκεύτηκαν τοπικά!');
+            
+            // Καθαρισμός φόρμας μετά την υποβολή
+            document.getElementById('contactForm').reset();
+        });
+            
+            document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('header');
+            const navbar = document.getElementById('navbar');
+            const hamburger = document.querySelector('.hamburger');
+            const isHomePage = window.location.pathname.includes('home.html'); // Ελέγχει αν είναι η αρχική σελίδα
+        
+            // Αρχική κατάσταση: Διαφάνεια για το header αν είμαστε στην αρχική σελίδα
+            if (isHomePage) {
+                header.classList.add('transparent'); // Εφαρμόζει τη διαφάνεια στην αρχική σελίδα
+            } else {
+                header.classList.remove('transparent'); // Αφαιρεί τη διαφάνεια σε άλλες σελίδες
+            }
+        
+            // Προσθήκη event listener στο hamburger menu
+            hamburger.addEventListener('click', () => {
+                navbar.classList.toggle('active'); // Εναλλαγή της ενεργής κλάσης
+        
+                if (isHomePage && navbar.classList.contains('active')) {
+                    navbar.classList.add('transparent'); // Προσθήκη διαφάνειας αν είμαστε στην αρχική σελίδα
+                } else {
+                    navbar.classList.remove('transparent'); // Αφαίρεση διαφάνειας σε άλλες σελίδες ή όταν το menu κλείνει
+                }
+            });
+        });
+        
+                        
+    </script>
+    
+    
+
+    <footer>
+        <div class="footer-container">
+            <!-- Στήλη 1 -->
+            <div class="footer-column">
+                <h3>Σχετικά με Εμάς</h3>
+                <p>Ειδικευόμαστε στην εισαγωγή αυτοκινήτων από το εξωτερικό, παρέχοντας υψηλής ποιότητας οχήματα και κορυφαία εξυπηρέτηση στους πελάτες μας.</p>
+            </div>
+    
+            <!-- Στήλη 2 -->
+            <div class="footer-column">
+                <h3>Γρήγοροι Σύνδεσμοι</h3>
+                <ul>
+                    <li><a href="home.html">Αρχική Σελίδα</a></li>
+                    <li><a href="aboutus.html">Σχετικά με Εμάς</a></li>
+                    <li><a href="cars.html">Αυτοκίνητα</a></li>
+                    <li><a href="#">Επικοινωνία</a></li>
+                    <li><a href="#">Όροι Χρήσης</a></li>
+                </ul>
+            </div>
+    
+            <!-- Στήλη 3 -->
+            <div class="footer-column">
+                <h3>Επικοινωνία</h3>
+                <ul>
+                    <li>Email: info@autoinport.gr</li>
+                    <li>Τηλέφωνο: +30 210 1234567</li>
+                    <li>Διεύθυνση: Λεωφόρος Αυτοκινήτων 123, Αθήνα</li>
+                </ul>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+    
+          
+        </div>
+    
+        <div class="footer-bottom">
+            <p>© 2024 AutoImport. Όλα τα δικαιώματα κατοχυρωμένα.</p>
+        </div>
+    </footer>
+<script src="script.js"></script>
+
+</body>
+</html>
