@@ -114,9 +114,9 @@ function displayCars(cars) {
 
 
     // Συνάρτηση για εμφάνιση 3 τυχαίων αυτοκινήτων στην home.html
-    function getRandomCars(cars, count) {
-        const shuffled = cars.sort(() => 0.5 - Math.random()); // Shuffle the cars array
-        return shuffled.slice(0, count); // Get the first 'count' cars
+function getRandomCars(cars, count) {
+     const shuffled = cars.sort(() => 0.5 - Math.random()); // Shuffle the cars array
+     return shuffled.slice(0, count); // Get the first 'count' cars
     }
 // Συνάρτηση για εμφάνιση 3 τυχαίων αυτοκινήτων στην home.html
 function displayRandomCars() {
