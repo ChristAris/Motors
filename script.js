@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
             cars = data; // Αποθήκευση των αυτοκινήτων στον πίνακα
-            if (window.location.pathname.endsWith('home.html')) {
+            if (window.location.pathname.endsWith('index.html')) {
                 displayRandomCars(); // Εμφάνιση τυχαίων αυτοκινήτων στην αρχική σελίδα
             } else if (window.location.pathname.endsWith('cars.html')) {
               
